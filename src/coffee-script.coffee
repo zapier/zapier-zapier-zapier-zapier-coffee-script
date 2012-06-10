@@ -37,11 +37,14 @@ exports.compile = compile = (code, options = {}) ->
   ### FROM/IMPORT HANDLING ###
   try
     lines = code.split(/\r\n|\r|\n/)
+    parsing = false
     from = []
     vars = []
     for line, i in lines
-      break if line == '' or line == "\n"
-      break if i == 0 and line.indexOf('from') != 0
+      continue if line.indexOf('#') == 0
+      break if line == '' or line == ' ' or line == "\n"
+      break if not parsing and (line.indexOf('from') != 0)
+      parsing = true
       match = line.match /^from\x20(.+)\x20import\x20(.+)$/
       if match?.length == 3
         from.push match[1]
@@ -51,7 +54,7 @@ exports.compile = compile = (code, options = {}) ->
     if from.length > 0
       head = "define ["+from.join(",")+"], ("+vars.join(",")+") ->\n"
       # indent every line after by 1
-      code = code.replace /\r\n|\r|\n/g, "\n "
+      code = code.replace /(\r\n|\r|\n)/g, "$1 "
       # build final output for further parsing
       code = head+code
   catch err

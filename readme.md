@@ -49,3 +49,6 @@ Pre-reqs:
 2. `cd coffee-script`
 3. `bin/cake build:full` (note: might have to run`npm install jison` if error about jison)
 4. `sudo cake install`
+
+## MISC ##
+To rebuild the compiler if you messed something up: ```git checkout lib```
