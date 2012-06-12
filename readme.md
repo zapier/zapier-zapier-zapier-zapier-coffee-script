@@ -48,7 +48,7 @@ Pre-reqs:
 1. `git clone git@github.com:zapier/coffee-script.git`
 2. `cd coffee-script`
 3. `bin/cake build:full` (note: might have to run`npm install jison` if error about jison)
-4. `sudo cake install`
+4. `sudo bin/cake install`
 
 ## MISC ##
 To rebuild the compiler if you messed something up: ```git checkout lib```
