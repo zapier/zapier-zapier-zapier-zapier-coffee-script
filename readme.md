@@ -1,10 +1,10 @@
 #Zapier's very own CoffeeScript#
 
-##Does two things at the moment:##
+##Does three things at the moment:##
 
 1. A ```/* */``` style comment for the version which CoffeeScript places on every file. This makes it play nicer with tools that concatentate files.
 2. Supports a new ```from ... import ...``` syntax which playes nicely with RequireJS
-2b. Also support a plain ```import ...``` syntax for imports without return values
+3. Also support a plain ```import ...``` syntax for imports without return values
 
 Example usage:
 
