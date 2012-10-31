@@ -39,17 +39,23 @@ exports.compile = compile = (code, options = {}) ->
     lines = code.split(/\r\n|\r|\n/)
     parsing = false
     from = []
+    last = []
     vars = []
     for line, i in lines
       continue if line.indexOf('#') == 0
       break if line == '' or line == ' ' or line == "\n"
-      break if not parsing and (line.indexOf('from') != 0)
+      break if not parsing and line.indexOf('from') != 0 and line.indexOf('import') != 0
       parsing = true
       match = line.match /^from\x20(.+)\x20import\x20(.+)$/
       if match?.length == 3
         from.push match[1]
         vars.push match[2]
+      else
+        match = line.match /^import\x20(.+)$/
+        last.push match[1]
       code = code.replace line, ''
+    # concat from and last b/c last never has correspoding func value vars
+    from = from.concat(last)
     # build requirejs include header
     if from.length > 0
       head = "define ["+from.join(",")+"], ("+vars.join(",")+") ->\n"
