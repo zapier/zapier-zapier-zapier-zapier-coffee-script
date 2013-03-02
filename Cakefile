@@ -53,7 +53,7 @@ task 'install', 'install CoffeeScript into /usr/local (or --prefix)', (options) 
   node = "~/.node_libraries/coffee-script"
   console.log   "Installing CoffeeScript to #{lib}"
   console.log   "Linking to #{node}"
-  console.log   "Linking 'coffee' to #{bin}/coffee"
+  console.log   "Linking 'coffee' to #{bin}/zcoffee"
   exec([
     "mkdir -p #{lib} #{bin}"
     "cp -rf bin lib LICENSE README package.json src #{lib}"
