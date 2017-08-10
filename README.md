@@ -1,4 +1,4 @@
-This project is no longer maintained. If you are interested in taking over the project, email contact@zapier.com (mailto:contact@zapier.com).
+_This project is no longer maintained. If you are interested in taking over the project, email [contact@zapier.com](mailto:contact@zapier.com)._
 
 # Zapier's very own CoffeeScript
 
