@@ -1,6 +1,8 @@
-#Zapier's very own CoffeeScript#
+This project is no longer maintained. If you are interested in taking over the project, email contact@zapier.com (mailto:contact@zapier.com).
 
-##Does three things at the moment:##
+# Zapier's very own CoffeeScript
+
+## Does three things at the moment:
 
 1. A ```/* */``` style comment for the version which CoffeeScript places on every file. This makes it play nicer with tools that concatentate files.
 2. Supports a new ```from ... import ...``` syntax which playes nicely with RequireJS
@@ -52,5 +54,5 @@ Pre-reqs:
 3. `bin/cake build:full` (note: might have to run`npm install jison` if error about jison)
 4. `sudo bin/cake install`
 
-## MISC ##
+## MISC
 To rebuild the compiler if you messed something up: ```git checkout lib```
